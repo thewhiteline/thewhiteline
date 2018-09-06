@@ -9,7 +9,6 @@
     "quotemark": [true, "avoid-escape"],
     "indent": false,
     "member-access": [false],
-    "ordered-imports": [false],
     "max-line-length": [true, 150],
     "member-ordering": [false],
     "curly": false,
