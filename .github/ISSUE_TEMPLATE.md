@@ -1,5 +1,3 @@
-## Summary
-
 _Give a brief description of the problem._
 
 ### Remarks

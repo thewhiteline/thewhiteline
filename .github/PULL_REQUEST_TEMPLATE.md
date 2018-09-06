@@ -1,5 +1,3 @@
-## Summary
-
 _Give a brief description of what was added/changed/removed._
 
 ### Remarks
