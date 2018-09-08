@@ -1,6 +1,11 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 
-# Created by https://www.gitignore.io/api/node
+# Created by https://www.gitignore.io/api/node,firebase
+
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
 
 ### Node ###
 # Logs
@@ -78,9 +83,9 @@ typings/
 .serverless
 
 
-# End of https://www.gitignore.io/api/node
+# End of https://www.gitignore.io/api/node,firebase
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 pnpm-debug.log*
-dist/
+**/dist/
