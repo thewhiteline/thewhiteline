@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "../../dist/functions",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitReturns": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "lib": ["es6"]
+  }
+}

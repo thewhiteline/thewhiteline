@@ -9,11 +9,17 @@
     "start": "next start src/app"
   },
   "dependencies": {
+    "@zeit/next-typescript": "^1.1.0",
+    "firebase-admin": "^6.0.0",
+    "firebase-functions": "^2.0.5",
     "next": "^6.1.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
   },
   "devDependencies": {
-    "babel-runtime": "^6.26.0"
+    "@types/next": "^6.1.4",
+    "@types/react": "^16.4.13",
+    "babel-runtime": "^6.26.0",
+    "typescript": "^3.0.3"
   }
 }
