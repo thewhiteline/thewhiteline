@@ -1,6 +1,7 @@
 {
   "functions": {
-    "source": "dist/functions"
+    "source": "dist/functions",
+    "predeploy": ["npm run build:prod"]
   },
   "firestore": {
     "rules": "firebase/firestore.rules",

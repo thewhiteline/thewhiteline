@@ -5,8 +5,18 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "next src/app",
-    "build": "next build src/app",
-    "start": "next start src/app"
+    "start:prod": "NODE_ENV=production firebase serve --only functions",
+    "deploy:prod": "firebase deploy --except functions && firebase deploy --only functions",
+    "build:prod": "tsc --project src/functions && next build src/app && cp package.json dist/functions/package.json && cp package-lock.json dist/functions/package-lock.json && cd dist/functions && npm i",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@types/next": "^6.1.4",
+    "@types/react": "^16.4.13",
+    "babel-runtime": "^6.26.0",
+    "firebase-tools": "^4.2.1",
+    "rimraf": "^2.6.2",
+    "typescript": "^3.0.3"
   },
   "dependencies": {
     "@zeit/next-typescript": "^1.1.0",
@@ -15,11 +25,5 @@
     "next": "^6.1.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
-  },
-  "devDependencies": {
-    "@types/next": "^6.1.4",
-    "@types/react": "^16.4.13",
-    "babel-runtime": "^6.26.0",
-    "typescript": "^3.0.3"
   }
 }
