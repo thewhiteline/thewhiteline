@@ -1,31 +1,50 @@
 # The White Line
 
-Learning couldn't be easier.
+Learn because you want to.
 
 ## Requirements
 
 This project uses the following tools that need to be installed on your system.
 
 - [Node.js](https://nodejs.org) - JavaScript runtime built on Chrome's V8 JavaScript engine
-- [pnpm](https://pnpm.js.org/) - Fast, disk space efficient package manager
+- [Firebase CLI](https://npmjs.org/package/firebase-tools) - Firebase helps mobile app teams succeed.
 
 ## Development
 
-To properly set up the project on your system, simply clone the project and follow the following instructions.
+To setup this project for development, simply run the following commands.
 
 ```bash
 # Install all dependencies
-$ pnpm recursive install
+$ npm install
 ```
 
-Next, open up two terminal instances and run the following _in order_ _(Currently, this only runs the API. This should be updated in the future when the web package is set up)_.
+Next.js provides a development server which watches your files and reloads the webpage.
 
 ```bash
-# Terminal 1
-# Run webpack to bundle
-$ cd api && pnpm run webpack
-
-# Terminal 2
 # Start the development server
-$ cd api && pnpm run start:dev
+$ npm run start:dev
+```
+
+Firebase provides an emulator which emulates its services locally. This is useful when wanting to test out production features but deployment is not an option.
+
+```bash
+# Build the production files
+$ npm run build:prod
+
+# Start the emulator
+$ npm run start:prod
+```
+
+To deploy the current code to Firebase, simply run the deployment script.
+
+```bash
+# Deploy to Firebase
+$ npm run deploy:prod
+```
+
+Sometimes, errors might occur due to caching or old deployment files. A script is provided to clean these files.
+
+```bash
+# Clean production files
+$ npm run clean
 ```

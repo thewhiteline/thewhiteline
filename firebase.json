@@ -1,0 +1,23 @@
+{
+  "functions": {
+    "source": "dist/functions",
+    "predeploy": ["npm run build:prod"]
+  },
+  "hosting": {
+    "public": "dist/public",
+    "rewrites": [
+      {
+        "source": "**/**",
+        "function": "app"
+      }
+    ],
+    "predeploy": ["cp -r src/public dist/public"]
+  },
+  "firestore": {
+    "rules": "firebase/firestore.rules",
+    "indexes": "firebase/firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "firebase/storage.rules"
+  }
+}
