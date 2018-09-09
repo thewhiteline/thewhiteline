@@ -1,7 +1,7 @@
 import { Component } from "react";
 
 export default class extends Component {
-  render() {
+  public render() {
     return (
       <>
         <h1>The White Line</h1>

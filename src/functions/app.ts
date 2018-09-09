@@ -6,8 +6,11 @@ const app = next({ dev, conf: { distDir: "app" } });
 const handler = app.getRequestHandler();
 
 export default functions.https.onRequest((req, res) => {
-  return app
-    .prepare()
-    .then(() => handler(req, res))
-    .catch(console.error);
+  return (
+    app
+      .prepare()
+      .then(() => handler(req, res))
+      // tslint:disable-next-line
+      .catch(console.error)
+  );
 });

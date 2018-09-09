@@ -8,6 +8,7 @@
     "build:prod": "tsc --project src/functions && next build src/app && cp package.json dist/functions/package.json && cp package-lock.json dist/functions/package-lock.json && cd dist/functions && npm i",
     "start:prod": "NODE_ENV=production firebase serve --only functions,hosting",
     "deploy:prod": "firebase deploy --except functions,hosting && firebase deploy --only functions,hosting",
+    "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'",
     "clean": "rimraf dist"
   },
   "devDependencies": {
@@ -16,6 +17,7 @@
     "babel-runtime": "^6.26.0",
     "firebase-tools": "^4.2.1",
     "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
     "typescript": "^3.0.3"
   },
   "dependencies": {
