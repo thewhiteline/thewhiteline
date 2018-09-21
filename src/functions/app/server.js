@@ -1,10 +1,12 @@
 const { createServer } = require("http");
 const next = require("next");
 
-const dev = process.env.NODE_ENV !== "production";
 const conf = require("./next.config");
+const routes = require("../routes");
+
+const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev, conf });
-const handler = app.getRequestHandler();
+const handler = routes.getRequestHandler(app);
 
 app
   .prepare()
