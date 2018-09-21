@@ -4,8 +4,8 @@
   "author": "The White Line",
   "license": "MIT",
   "scripts": {
-    "start:dev": "cd src/functions/app && node server.js",
-    "build:prod": "tsc --project src/functions && next build src/functions/app && cp src/functions/routes.js dist/functions/routes.js && cp package.json dist/functions/package.json && cp package-lock.json dist/functions/package-lock.json && cd dist/functions && npm i",
+    "start:dev": "cd src/functions/app && ts-node --project ../tsconfig.json server.ts",
+    "build:prod": "tsc --project src/functions && next build src/functions/app && cp package.json dist/functions/package.json && cp package-lock.json dist/functions/package-lock.json && cd dist/functions && npm i",
     "start:prod": "NODE_ENV=production firebase serve --only functions,hosting",
     "deploy:prod": "firebase deploy --except functions,hosting && firebase deploy --only functions,hosting",
     "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'",
@@ -20,6 +20,7 @@
     "jest": "^23.5.0",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.1.4",
+    "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3"
   },

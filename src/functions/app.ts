@@ -1,7 +1,7 @@
 import * as functions from "firebase-functions";
 import * as next from "next";
 
-import * as routes from "./routes";
+import routes from "./routes";
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev, conf: { distDir: "app" } });

@@ -1,9 +1,8 @@
-const { createServer } = require("http");
-const next = require("next");
-const Routes = require("next-routes");
+import { createServer } from "http";
+import * as next from "next";
 
-const conf = require("./next.config");
-const routes = require("../routes");
+import routes from "../routes";
+import conf from "./next.config";
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev, conf });
@@ -14,4 +13,5 @@ app
   .then(() => {
     createServer(handler).listen(3000);
   })
+  // tslint:disable-next-line
   .catch(console.error);
