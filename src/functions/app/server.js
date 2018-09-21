@@ -1,5 +1,6 @@
 const { createServer } = require("http");
 const next = require("next");
+const Routes = require("next-routes");
 
 const conf = require("./next.config");
 const routes = require("../routes");
