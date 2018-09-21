@@ -1,12 +1,9 @@
-const withTypeScript = require("@zeit/next-typescript");
 const { createServer } = require("http");
 const next = require("next");
 
 const dev = process.env.NODE_ENV !== "production";
-const app = next({
-  dev,
-  conf: withTypeScript({ distDir: "../../dist/functions/app" }),
-});
+const conf = require("./next.config");
+const app = next({ dev, conf });
 const handler = app.getRequestHandler();
 
 app

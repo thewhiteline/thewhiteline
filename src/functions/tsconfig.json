@@ -8,5 +8,6 @@
     "sourceMap": true,
     "baseUrl": ".",
     "lib": ["es6"]
-  }
+  },
+  "exclude": ["app/**"]
 }
