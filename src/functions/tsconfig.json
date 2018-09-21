@@ -2,11 +2,13 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
+    "allowJs": true,
     "outDir": "../../dist/functions",
     "allowSyntheticDefaultImports": true,
     "noImplicitReturns": true,
     "sourceMap": true,
     "baseUrl": ".",
     "lib": ["es6"]
-  }
+  },
+  "exclude": ["app/**"]
 }

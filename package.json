@@ -4,8 +4,8 @@
   "author": "The White Line",
   "license": "MIT",
   "scripts": {
-    "start:dev": "next src/app",
-    "build:prod": "tsc --project src/functions && next build src/app && cp package.json dist/functions/package.json && cp package-lock.json dist/functions/package-lock.json && cd dist/functions && npm i",
+    "start:dev": "cd src/functions/app && ts-node --project ../tsconfig.json server.ts",
+    "build:prod": "tsc --project src/functions && next build src/functions/app && cp package.json dist/functions/package.json && cp package-lock.json dist/functions/package-lock.json && cd dist/functions && npm i",
     "start:prod": "NODE_ENV=production firebase serve --only functions,hosting",
     "deploy:prod": "firebase deploy --except functions,hosting && firebase deploy --only functions,hosting",
     "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'",
@@ -13,13 +13,14 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "@types/next": "^6.1.4",
+    "@types/next": "^6.1.7",
     "@types/react": "^16.4.13",
     "babel-runtime": "^6.26.0",
     "firebase-tools": "^4.2.1",
     "jest": "^23.5.0",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.1.4",
+    "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3"
   },
@@ -27,7 +28,8 @@
     "@zeit/next-typescript": "^1.1.0",
     "firebase-admin": "^6.0.0",
     "firebase-functions": "^2.0.5",
-    "next": "^6.1.2",
+    "next": "^7.0.0",
+    "next-routes": "^1.4.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
   },
